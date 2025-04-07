@@ -1,0 +1,24 @@
+.hero {
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+    min-height: 90vh; /* Makes hero section take at least 80% of viewport height */
+    padding: 5rem 2rem;
+    color: #ffffff;
+    text-align: center;
+   /* border-radius: 6px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-buttons .btn {
+    margin: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .hero {
+        min-height: 90vh;
+        padding: 3rem 1rem;
+    }
+}

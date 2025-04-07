@@ -1,0 +1,158 @@
+.consulting-section {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 6rem 0;
+    position: relative;
+}
+
+.consulting-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #28a745, #1e7e34);
+    margin: 0 auto 2rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.benefits-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.benefits-list li:hover {
+    transform: translateX(10px);
+}
+
+.benefits-list li i {
+    color: #28a745;
+    font-size: 1.3rem;
+}
+
+.benefits-list li.highlight {
+    background: rgba(40, 167, 69, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.benefits-list li.highlight i {
+    font-size: 1.5rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button i {
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 992px) {
+    .consulting-section {
+        padding: 5rem 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .consulting-section {
+        padding: 4rem 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    .benefits-list li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .consulting-section {
+        padding: 3rem 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .benefits-container {
+        padding: 1.5rem;
+    }
+
+    .benefits-list li {
+        padding: 0.5rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}

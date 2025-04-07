@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-color: #1a1a1a; 
+$secondary-color: #333333;
+$accent-color: #ffffff;
+$font-family: 'Montserrat', sans-serif;
+
+body {
+  font-family: $font-family;
+  background-color: $primary-color;
+  color: $accent-color;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($accent-color, 10%);
+  }
+}

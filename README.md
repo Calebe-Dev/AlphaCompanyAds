@@ -1,59 +1,91 @@
-# AlphaCompanyAds
+# 🚀 Deploy de Aplicação Angular com SSR no GitHub Pages
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+Este tutorial mostra como publicar um projeto Angular com Angular Universal (SSR) no GitHub Pages, utilizando a biblioteca `angular-cli-ghpages`.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📋 Requisitos
 
-```bash
-ng serve
-```
+- Node.js e Angular CLI instalados
+- Projeto Angular com SSR configurado:
+  ```bash
+  ng add @nguniversal/express-engine
+  ```
+- Projeto versionado com Git
+- Repositório no GitHub criado e vinculado ao repositório local
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 1. Instalar o `angular-cli-ghpages`
 
 ```bash
-ng generate --help
+npm install -g angular-cli-ghpages
 ```
 
-## Building
+---
 
-To build the project run:
+## 🏗️ 2. Build da aplicação com SSR
+
+Para projetos com Angular Universal, o comando a seguir gera os arquivos do lado do cliente (estáticos) e do lado do servidor (Node.js):
 
 ```bash
-ng build
+npm run build:ssr
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Isso vai gerar a seguinte estrutura:
 
-## Running unit tests
+```
+dist/
+└── nome-do-projeto/
+    ├── browser/   ✅ Arquivos estáticos (HTML, JS, CSS)
+    └── server/    🚫 Arquivos de backend (não utilizados no GitHub Pages)
+```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+> Substitua `nome-do-projeto` pelo nome exato do seu projeto, como definido no `angular.json`.
+
+---
+
+## 🌐 3. Deploy da pasta `browser`
+
+O GitHub Pages **só aceita arquivos estáticos**, então o deploy deve ser feito a partir da pasta `browser`:
 
 ```bash
-ng test
+npx angular-cli-ghpages --dir=dist/nome-do-projeto/browser
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## ✅ 4. Acesse seu site
+
+Após o deploy, o site estará disponível em:
+
+```
+https://seu-usuario.github.io/nome-do-repositorio/
+```
+
+---
+
+## ⚙️ 5. Automatize com um script
+
+Para facilitar futuros deploys, adicione o seguinte no seu `package.json`:
+
+```json
+"scripts": {
+  "build:ssr": "ng build --configuration production && ng run nome-do-projeto:server:production",
+  "deploy": "npm run build:ssr && npx angular-cli-ghpages --dir=dist/nome-do-projeto/browser"
+}
+```
+
+Então, basta rodar:
 
 ```bash
-ng e2e
+npm run deploy
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## ⚠️ Observação Importante
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Não** use a pasta `dist/nome-do-projeto` completa para o deploy no GitHub Pages. A pasta `server/` contém arquivos Node.js que **não funcionam** em hospedagens de arquivos estáticos.
+
+Utilize **somente a pasta `browser/`**, pois é ela que contém os arquivos corretos para a publicação no GitHub Pages.

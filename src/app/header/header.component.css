@@ -8,6 +8,17 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: #ffffff !important;
+    .brand-logo {
+        height: auto;
+        width: auto;
+        margin-right: 10px;
+    }
+    
+    @media (max-width: 576px) {
+        .brand-logo {
+            height: 30px;
+        }
+    }
 }
 
 .brand-text {

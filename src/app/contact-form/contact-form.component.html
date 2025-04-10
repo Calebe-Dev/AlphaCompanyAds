@@ -1,0 +1,89 @@
+<div class="container-bg">
+    <div class="container-form">
+
+        <section class="informative">
+            <h2>Entre em Contato Agora</h2>
+            <div class="divider"></div>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <div class="benefit-content">
+                        <h3>Resultados Comprovados</h3>
+                        <p>Estratégias que já geraram milhões em vendas para nossos parceiros</p>
+                    </div>
+                </div>
+    
+                <div class="benefit-item">
+                    <i class="bi bi-trophy"></i>
+                    <div class="benefit-content">
+                        <h3>Especialistas Certificados</h3>
+                        <p>Time certificado pelo Google e Meta Ads</p>
+                    </div>
+                </div>
+    
+                <div class="benefit-item">
+                    <i class="bi bi-lightning-charge"></i>
+                    <div class="benefit-content">
+                        <h3>Agilidade e Eficiência</h3>
+                        <p>Início rápido e otimizações constantes para máximo ROI</p>
+                    </div>
+                </div>
+    
+                <div class="benefit-item">
+                    <i class="bi bi-graph-up"></i>
+                    <div class="benefit-content">
+                        <h3>Relatórios Detalhados</h3>
+                        <p>Acompanhamento transparente de todos os resultados</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="form-content">
+                    <h2>Iniciar Consultoria</h2>
+                    <div class="divider"></div>
+                    <p class="lead">Preencha o formulário abaixo para iniciarmos nossa parceria</p>
+        
+                    <form class="contact-form" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="formData.name" name="name" placeholder="Nome Completo" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="email" [(ngModel)]="formData.email" name="email" placeholder="Email" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="tel" [(ngModel)]="formData.phone" name="phone" placeholder="Telefone/WhatsApp" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="formData.company" name="company" placeholder="Nome da Empresa">
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="formData.budget" name="budget" placeholder="Quanto você investe em marketing atualmente?" rows="4" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="formData.invoicing" name="invoicing" placeholder="Qual seu faturamento mensal?" rows="4" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <textarea [(ngModel)]="formData.message" name="message" placeholder="Como podemos ajudar sua empresa?" rows="4" required></textarea>
+                        </div>
+        
+                        <button type="submit" class="submit-button">
+                            <span>Enviar Mensagem</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    
+    </div>
+</div>

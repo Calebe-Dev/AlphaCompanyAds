@@ -6,32 +6,27 @@
   align-items: center;
   padding: 5rem 0;
 }
-
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
 }
-
 .section-header h2 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
-
 .divider {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #ff4444, #4285f4);
+  background: #ff4444;
   margin: 0 auto 1.5rem;
 }
-
 .section-header .lead {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
   margin: 0 auto;
 }
-
 .strength-card {
   padding: 2.5rem;
   height: 100%;
@@ -41,30 +36,24 @@
   max-width: 40rem;
   background: rgba(0, 0, 0, 0.8);
 }
-
 .strength-card.negative {
   background: rgba(255, 68, 68, 0.1);
   border: 1px solid rgba(255, 68, 68, 0.2);
 }
-
 .strength-card.positive {
   background: rgba(66, 133, 244, 0.1);
   border: 1px solid rgba(66, 133, 244, 0.2);
 }
-
 .strength-card i {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
 }
-
 .negative i {
   color: #ff4444;
 }
-
 .positive i {
   color: #4285f4;
 }
-
 .strength-card h4 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -72,14 +61,12 @@
   letter-spacing: 0.5px;
   font-family: 'Open Sans', sans-serif;
 }
-
 .strength-card ul {
   list-style: none;
   padding: 0;
   margin: 0 auto;
   max-width: 90%;
 }
-
 .strength-card ul li {
   margin-bottom: 1rem;
   font-size: 1.1rem;
@@ -89,27 +76,23 @@
   font-family: 'Roboto', sans-serif;
   text-align: left;
 }
-
 .negative ul li::before {
   content: "→";
   position: absolute;
   left: 0;
   color: #ff4444;
 }
-
 .positive ul li::before {
   content: "→";
   position: absolute;
   left: 0;
   color: #4285f4;
 }
-
 @media (max-width: 992px) {
   .section-header h2 {
     font-size: 2rem;
   }
 }
-
 @media (max-width: 768px) {
   .strengths {
     padding: 4rem 1rem;

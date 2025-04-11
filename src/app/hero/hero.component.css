@@ -1,10 +1,9 @@
 .hero {
     background: linear-gradient(135deg, #1a1a1a, #0017f9);
-    min-height: 90vh; /* Makes hero section take at least 80% of viewport height */
+    min-height: 90vh;
     padding: 5rem 2rem;
     color: #ffffff;
     text-align: center;
-   /* border-radius: 6px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,20 +11,16 @@
     font-family: Monrserrat, sans-serif;
 }
 
-.cta-buttons .btn {
-    margin: 0.5rem;
+.hero img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 2rem;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.cta-button{
-    background-color: #FF4900;
-    color: #0D0900;
-    padding: 10px 80px;
-    border: none;
-    border-radius: 13px;
-    font-size: 18px;
-    cursor: pointer;
-    transition-duration: .3s;
-    transition-property: transform;
+.hero img:hover {
+    transform: scale(1.05);
 }
 
 /* Responsive adjustments */
@@ -34,4 +29,32 @@
         min-height: 90vh;
         padding: 3rem 1rem;
     }
+
+    .hero img {
+        max-width: 200px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero img {
+        max-width: 150px;
+        margin-bottom: 1rem;
+    }
+}
+
+.cta-buttons .btn {
+    margin: 2rem;
+}
+
+.cta-button{
+    background-color: #FF4900;
+    color: #0D0900;
+    padding: 20px 80px;
+    border: none;
+    border-radius: 13px;
+    font-size: 18px;
+    cursor: pointer;
+    transition-duration: .3s;
+    transition-property: transform;
 }

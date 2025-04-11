@@ -7,6 +7,7 @@ body {
   font-family: $font-family;
   background-color: $primary-color;
   color: $accent-color;
+  scroll-behavior: smooth;
 }
 
 a {

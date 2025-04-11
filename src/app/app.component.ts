@@ -11,10 +11,11 @@ import { ValuePropositionComponent } from "./value-proposition/value-proposition
 import { AuthorityComponent } from "./authority/authority.component";
 import { ConsultingFormComponent } from "./consulting-form/consulting-form.component";
 import { ContactFormComponent } from "./contact-form/contact-form.component";
+import { CommentsComponent } from './comments/comments.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, AboutComponent, ContactComponent, ServicesComponent, HeroComponent, StrengthsComponent, FooterComponent, ValuePropositionComponent, AuthorityComponent, ConsultingFormComponent, ContactFormComponent],
+  imports: [RouterOutlet, HeaderComponent, AboutComponent, ContactComponent, ServicesComponent, HeroComponent, StrengthsComponent, FooterComponent, ValuePropositionComponent, AuthorityComponent, ConsultingFormComponent, ContactFormComponent, CommentsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,124 @@
+.comments-section {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: clamp(3rem, 6vw, 6rem) 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.comments-content {
+    max-width: min(1200px, 90vw);
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 clamp(1rem, 3vw, 1.5rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.divider {
+    width: min(60px, 15vw);
+    height: 3px;
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+    margin: 0 auto clamp(1.5rem, 3vw, 2rem);
+}
+
+.lead {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    line-height: 1.6;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: clamp(1.5rem, 3vw, 2rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    width: 100%;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: clamp(15px, 2vw, 20px);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    text-align: left;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(clamp(-10px, -2vw, -5px));
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.quote-icon {
+    color: #4285f4;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: clamp(0.8rem, 2vw, 1rem);
+}
+
+.testimonial-text {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 2vw, 1rem);
+    flex-wrap: wrap;
+}
+
+.client-image {
+    width: clamp(45px, 8vw, 60px);
+    height: clamp(45px, 8vw, 60px);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.client-details h4 {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+}
+
+.client-details p {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .comments-section {
+        padding: clamp(4rem, 8vw, 5rem) 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .comments-section {
+        padding: clamp(3rem, 6vw, 4rem) clamp(0.8rem, 2vw, 1rem);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .client-info {
+        justify-content: center;
+    }
+
+    .client-details {
+        text-align: center;
+    }
+}

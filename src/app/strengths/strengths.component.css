@@ -1,10 +1,42 @@
 .strengths {
-  background-color: #000;
-  color: #ffffff;
+  position: relative;
+  background: linear-gradient(225deg, #000000, #001133, #000000, #001a4d);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
   min-height: 90vh; 
   display: flex;
   align-items: center;
   padding: 5rem 0;
+  color: #ffffff;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Add depth overlay */
+.strengths::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
 }
 .section-header {
   text-align: center;

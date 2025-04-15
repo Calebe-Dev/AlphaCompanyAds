@@ -1,9 +1,41 @@
 .about-section {
-  background-color: #2a2a2a;
+  position: relative;
+  background: linear-gradient(225deg, #2a2a2a, #001133, #2a2a2a, #0017f9);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
   color: #ffffff;
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Add depth overlay */
+.about-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.2) 100%);
+    pointer-events: none;
+}
+
+.about-content {
+    position: relative;
+    z-index: 1;
 }
 
 .about-content {

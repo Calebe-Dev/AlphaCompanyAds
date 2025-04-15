@@ -1,34 +1,35 @@
 .consulting-section {
-    background-color: #1a1a1a;
+    position: relative;
+    background: linear-gradient(225deg, #1a1a1a, #002233, #1a1a1a, #003344);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
     color: #ffffff;
     padding: 6rem 0;
-    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .consulting-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.divider {
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #28a745, #1e7e34);
-    margin: 0 auto 2rem;
-}
-
-.lead {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 3rem;
-    line-height: 1.6;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .benefits-container {
@@ -36,15 +37,7 @@ h2 {
     border-radius: 15px;
     padding: 2rem;
     margin: 2rem 0;
-}
-
-.benefits-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    backdrop-filter: blur(10px);
 }
 
 .benefits-list li {
@@ -53,26 +46,26 @@ h2 {
     gap: 1rem;
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: calc(var(--li-index) * 0.2s);
 }
 
 .benefits-list li:hover {
     transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 }
 
 .benefits-list li i {
     color: #28a745;
     font-size: 1.3rem;
+    transition: all 0.3s ease;
 }
 
-.benefits-list li.highlight {
-    background: rgba(40, 167, 69, 0.1);
-    border-radius: 8px;
-    padding: 1rem;
-}
-
-.benefits-list li.highlight i {
-    font-size: 1.5rem;
+.benefits-list li:hover i {
+    transform: scale(1.2);
 }
 
 .cta-button {
@@ -88,6 +81,9 @@ h2 {
     text-decoration: none;
     transition: all 0.3s ease;
     margin-top: 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .cta-button:hover {

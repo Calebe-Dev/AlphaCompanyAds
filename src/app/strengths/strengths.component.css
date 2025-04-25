@@ -67,18 +67,62 @@
   text-align: center;
   max-width: 40rem;
   background: rgba(0, 0, 0, 0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
+
 .strength-card.negative {
   background: rgba(255, 68, 68, 0.1);
   border: 1px solid rgba(255, 68, 68, 0.2);
 }
+
 .strength-card.positive {
   background: rgba(66, 133, 244, 0.1);
   border: 1px solid rgba(66, 133, 244, 0.2);
 }
+
+.strength-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  margin: solid #fff 1px;
+}
+
+.strength-card.negative:hover {
+  background: rgba(255, 68, 68, 0.15);
+  border-color: rgba(255, 68, 68, 0.3);
+}
+
+.strength-card.positive:hover {
+  background: rgba(66, 133, 244, 0.15);
+  border-color: rgba(66, 133, 244, 0.3);
+}
+
 .strength-card i {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.strength-card:hover i {
+  transform: scale(1.2) rotateY(360deg);
+}
+
+.strength-card ul li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.strength-card:hover ul li {
+  transform: translateX(5px);
+  color: #ffffff;
 }
 .negative i {
   color: #ff4444;

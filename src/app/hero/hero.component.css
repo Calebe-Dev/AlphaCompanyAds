@@ -167,10 +167,38 @@ margin: 0 auto;
     animation: 
         revealText 1.5s ease-out 2s forwards,
         pulse 2s ease-in-out 5s infinite;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 100%;
 }
 
 .cta-buttons {
-    padding : 2rem;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .cta-button {
+        padding: 15px 40px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 14px;
+        width: 90%;
+        white-space: normal;
+        text-align: center;
+    }
+    
+    .cta-buttons {
+        padding: 1rem;
+    }
 }
 
 transition-duration: .3s;

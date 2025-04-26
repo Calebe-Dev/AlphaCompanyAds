@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/AlphaCompanyAds/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:AlphaCompanyAds": "node dist/alpha-company-ads/server/server.mjs"

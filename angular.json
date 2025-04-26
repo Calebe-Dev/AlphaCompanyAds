@@ -21,10 +21,16 @@
               "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
+            "baseHref": "/AlphaCompanyAds/",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [

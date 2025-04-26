@@ -2,15 +2,14 @@
     <div class="container">
         <a class="navbar-brand" href="#">
             <img [src]="'./assets/Logo.webp'" alt="Alpha Company Ads Logo" class="brand-logo">
-
         </a>
         
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" (click)="toggleMenu()"
+                [attr.aria-expanded]="isMenuOpen">
             <span class="navbar-toggler-icon"></span>
         </button>
         
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" [class.show]="isMenuOpen" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#services">Depoimentos</a>

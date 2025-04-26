@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-comments',
-  imports: [],
   templateUrl: './comments.component.html',
-  styleUrl: './comments.component.css'
+  styleUrls: ['./comments.component.css']
 })
-export class CommentsComponent {
-
+export class CommentsComponent implements OnInit {
+  ngOnInit() {
+    const script = document.createElement('script');
+    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.defer = true;
+    script.async = true;
+    script.onload = () => {
+      console.log('Elfsight script loaded successfully');
+    };
+    document.body.appendChild(script);
+  }
 }

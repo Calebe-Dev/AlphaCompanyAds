@@ -71,21 +71,52 @@ h2 {
 }
 
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: 800;
     color: #4285f4;
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.counter {
+    display: inline-block;
+    min-width: 2ch;
+    transition: color 0.3s ease;
+}
+
+.stat-number:hover {
+    color: #ea4335;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
 .stat-label {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-@keyframes glow {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .stat-number {
+        font-size: 2.8rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-number {
+        font-size: 2.4rem;
+    }
 }
 
 @media (max-width: 992px) {

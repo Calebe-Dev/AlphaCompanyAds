@@ -21,7 +21,7 @@
               "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
-            "baseHref": "/AlphaCompanyAds/",
+            "baseHref": "/",
             "assets": [
               {
                 "glob": "**/*",

@@ -2,36 +2,18 @@
   <div class="container">
     <div class="about-content">
       <div class="about-header">
-        <h2 class="about-title">Sobre Nós</h2>
+        <h2 class="about-title">{{title}}</h2>
         <div class="about-divider"></div>
-        <p class="about-subtitle">Transformando ideias em resultados digitais</p>
+        <p class="about-subtitle">{{subtitle}}</p>
       </div>
 
       <div class="about-grid">
-        <div class="about-card">
+        <div class="about-card" *ngFor="let card of aboutCards">
           <div class="card-icon">
-            <i class="bi bi-rocket-takeoff"></i>
+            <i [class]="card.icon"></i>
           </div>
           <div class="about-text">
-            <p>Somos uma agência de marketing com foco na criação de campanhas estratégicas para impulsionar sua presença digital e atrair clientes qualificados.</p>
-          </div>
-        </div>
-
-        <div class="about-card">
-          <div class="card-icon">
-            <i class="bi bi-graph-up-arrow"></i>
-          </div>
-          <div class="about-text">
-            <p>Nossa equipe de especialistas combina criatividade e análise de dados para desenvolver estratégias personalizadas que geram resultados mensuráveis.</p>
-          </div>
-        </div>
-
-        <div class="about-card">
-          <div class="card-icon">
-            <i class="bi bi-trophy"></i>
-          </div>
-          <div class="about-text">
-            <p>Com anos de experiência no mercado e um histórico comprovado de sucesso, estamos comprometidos em ser mais do que uma agência - somos parceiros no crescimento do seu negócio.</p>
+            <p>{{card.description}}</p>
           </div>
         </div>
       </div>

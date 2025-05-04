@@ -1,36 +1,51 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-contact-form',
-  standalone: true,
-  imports: [FormsModule],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.css'
+  styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent {
   formData = {
-    name: '',
+    nome: '',
     email: '',
-    phone: '',
-    company: '',
-    budget:'',
-    invoicing:'',
-    message: ''
+    telefone: '',
+    empresa: '',
+    website: '',
+    orcamento: '',
+    mensagem: ''
   };
 
-  onSubmit() {
-    // Here you would implement the email sending logic
-    console.log('Form submitted:', this.formData);
-    // Reset form after submission
+  enviando = false;
+  mensagemStatus = '';
+
+  constructor(private emailService: EmailService) {}
+
+  async onSubmit() {
+    this.enviando = true;
+    this.mensagemStatus = '';
+
+    try {
+      await this.emailService.enviarEmail(this.formData);
+      this.mensagemStatus = 'Mensagem enviada com sucesso!';
+      this.limparFormulario();
+    } catch (error) {
+      this.mensagemStatus = 'Erro ao enviar mensagem. Tente novamente.';
+    } finally {
+      this.enviando = false;
+    }
+  }
+
+  private limparFormulario() {
     this.formData = {
-      name: '',
+      nome: '',
       email: '',
-      phone: '',
-      company: '',
-      budget:'',
-      invoicing:'',
-      message: ''
+      telefone: '',
+      empresa: '',
+      website: '',
+      orcamento: '',
+      mensagem: ''
     };
   }
 }

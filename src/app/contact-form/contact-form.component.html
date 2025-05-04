@@ -47,38 +47,71 @@
                     <div class="divider"></div>
                     <p class="lead">Preencha o formulário abaixo para iniciarmos nossa parceria</p>
         
-                    <form class="contact-form" (ngSubmit)="onSubmit()">
+                    <form class="contact-form" id="form" (ngSubmit)="onSubmit()" #form>
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="formData.name" name="name" placeholder="Nome Completo" required>
+                            <input type="text" [(ngModel)]="formData.nome" name="nome" id="nome" placeholder="Nome Completo" required>
                         </div>
         
                         <div class="form-group">
-                            <input type="email" [(ngModel)]="formData.email" name="email" placeholder="Email" required>
+                            <input type="email" [(ngModel)]="formData.email" name="email" id="email" placeholder="Email" required>
                         </div>
         
                         <div class="form-group">
-                            <input type="tel" [(ngModel)]="formData.phone" name="phone" placeholder="Telefone/WhatsApp" required>
+                            <input type="tel" [(ngModel)]="formData.telefone" name="telefone" id="telefone" placeholder="Telefone/WhatsApp" required>
                         </div>
         
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="formData.company" name="company" placeholder="Nome da Empresa">
+                            <input type="text" [(ngModel)]="formData.empresa" name="empresa" id="empresa" placeholder="Nome da Empresa">
                         </div>
         
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="formData.budget" name="budget" placeholder="Quanto você investe em marketing atualmente?" rows="4" required>
+                            <input type="text" [(ngModel)]="formData.orcamento" name="orcamento" id="orcamento" placeholder="Quanto você investe em marketing atualmente?" required>
                         </div>
         
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="formData.invoicing" name="invoicing" placeholder="Qual seu faturamento mensal?" rows="4" required>
+                            <input type="text" [(ngModel)]="formData.faturamento" name="faturamento" id="faturamento" placeholder="Qual seu faturamento mensal?" required>
                         </div>
         
                         <div class="form-group">
-                            <textarea [(ngModel)]="formData.message" name="message" placeholder="Como podemos ajudar sua empresa?" rows="4" required></textarea>
+                            <textarea [(ngModel)]="formData.mensagem" name="mensagem" id="mensagem" placeholder="Como podemos ajudar sua empresa?" rows="4" required></textarea>
                         </div>
         
-                        <button type="submit" class="submit-button">
-                            <span>Enviar Mensagem</span>
-                            <i class="bi bi-arrow-right"></i>
+                        @if (statusEnvio.enviando || statusEnvio.sucesso || statusEnvio.erro) {
+                            <div class="status-messages">
+                                @if (statusEnvio.enviando) {
+                                    <div class="loading-container">
+                                        <div class="loading-dots">
+                                            <div class="dot"></div>
+                                            <div class="dot"></div>
+                                            <div class="dot"></div>
+                                        </div>
+                                        <p>Enviando mensagem...</p>
+                                    </div>
+                                }
+        
+                                @if (statusEnvio.sucesso) {
+                                    <div class="alert alert-success">
+                                        <i class="bi bi-check-circle"></i>
+                                        {{ statusEnvio.mensagem }}
+                                    </div>
+                                }
+        
+                                @if (statusEnvio.erro) {
+                                    <div class="alert alert-danger">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        {{ statusEnvio.mensagem }}
+                                    </div>
+                                }
+                            </div>
+                        }
+        
+                        <button type="submit" class="submit-button" id="button" [disabled]="statusEnvio.enviando">
+                            @if (!statusEnvio.enviando) {
+                                <span>Enviar Mensagem</span>
+                                <i class="bi bi-arrow-right"></i>
+                            } @else {
+                                <span>Enviando...</span>
+                            }
                         </button>
                     </form>
                 </div>

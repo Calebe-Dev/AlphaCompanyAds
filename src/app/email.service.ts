@@ -1,31 +1,26 @@
 import { Injectable } from '@angular/core';
 import emailjs from '@emailjs/browser';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
+  private readonly serviceID = environment.emailjs.serviceId;
+  private readonly templateID = environment.emailjs.templateId;
+
   constructor() {
-    // Inicialize com seu User ID do EmailJS
-    emailjs.init("SEU_USER_ID");
+    emailjs.init(environment.emailjs.publicKey ?? '');
   }
 
-  async enviarEmail(formData: any) {
+  async enviarEmail(form: HTMLFormElement): Promise<void> {
     try {
-      const response = await emailjs.send(
-        "SEU_SERVICE_ID", // ID do serviço EmailJS
-        "SEU_TEMPLATE_ID", // ID do template
-        {
-          nome: formData.nome,
-          email: formData.email,
-          telefone: formData.telefone,
-          empresa: formData.empresa,
-          website: formData.website,
-          orcamento: formData.orcamento,
-          mensagem: formData.mensagem
-        }
+      const response = await emailjs.sendForm(
+        this.serviceID ?? '',
+        this.templateID ?? '',
+        form
       );
-      return response;
+      return;
     } catch (error) {
       throw error;
     }

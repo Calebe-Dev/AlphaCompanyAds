@@ -1,32 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-authority',
   templateUrl: './authority.component.html',
   styleUrls: ['./authority.component.css']
 })
-export class AuthorityComponent implements OnInit {
+export class AuthorityComponent {
   clientCount: number = 0;
   satisfactionRate: number = 0;
   rating: number = 0;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
     this.initCounterObserver();
   }
 
   private initCounterObserver() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.startCounting();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
+    // Verifica se está no navegador antes de acessar o DOM
+    if (isPlatformBrowser(this.platformId)) {
+      const statsContainer = document.querySelector('.stats-container');
+      if (!statsContainer) {
+        console.error('Stats container not found');
+        return;
+      }
 
-    const statsContainer = document.querySelector('.stats-container');
-    if (statsContainer) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.startCounting();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
       observer.observe(statsContainer);
+    } else {
+      console.warn('initCounterObserver called on the server');
     }
   }
 

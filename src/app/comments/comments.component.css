@@ -8,10 +8,10 @@
 }
 
 .comments-content {
-    max-width: min(1200px, 90vw);
+    max-width: min(1200px, 95vw);  /* Aumentado de 90vw para 95vw */
     margin: 0 auto;
     text-align: center;
-    padding: 0 clamp(1rem, 3vw, 1.5rem);
+    padding: 0 clamp(0.5rem, 2vw, 1rem);  /* Reduzido o padding */
 }
 
 h2 {
@@ -105,15 +105,25 @@ h2 {
 
 @media (max-width: 768px) {
     .comments-section {
-        padding: clamp(3rem, 6vw, 4rem) clamp(0.8rem, 2vw, 1rem);
+        padding: clamp(3rem, 6vw, 4rem) clamp(0.5rem, 1vw, 0.8rem);  /* Reduzido o padding lateral */
     }
 
-    .testimonials-grid {
-        grid-template-columns: 1fr;
+    .comments-content {
+        max-width: 98vw;  /* Aumentado para quase toda a largura em telas menores */
+        padding: 0 0.5rem;  /* Padding mínimo fixo */
+    }
+
+    .elfsight-app-1e89a539-76fc-4026-981e-ce85d9f62e33 {
+        margin: 0 -0.5rem;  /* Compensação negativa para alinhar com as bordas */
     }
 }
 
 @media (max-width: 480px) {
+    .comments-content {
+        max-width: 100vw;  /* Largura total em telas muito pequenas */
+        padding: 0 0.25rem;  /* Padding ainda menor */
+    }
+
     .client-info {
         justify-content: center;
     }

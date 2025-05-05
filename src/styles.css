@@ -18,3 +18,12 @@ a {
     color: lighten($accent-color, 10%);
   }
 }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Ajuste conforme a altura do seu header */
+}
+
+section {
+    scroll-margin-top: 80px; /* Ajuste conforme a altura do seu header */
+}

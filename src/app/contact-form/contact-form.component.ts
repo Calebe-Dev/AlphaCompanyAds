@@ -17,8 +17,8 @@ export class ContactFormComponent implements OnInit {
     email: '',
     telefone: '',
     empresa: '',
-    faturamento: '',
-    orcamento: ''
+    faturamento: ''
+    // orcamento: ''
    // mensagem: ''
   };
 
@@ -68,8 +68,9 @@ export class ContactFormComponent implements OnInit {
       !!this.formData.nome &&
       !!this.formData.email &&
       this.validarEmail(this.formData.email) &&
-      !!this.formData.telefone &&
-      !!this.formData.orcamento 
+      !!this.formData.telefone 
+     // &&
+     // !!this.formData.orcamento 
     );
      // !!this.formData.mensagem
     
@@ -88,8 +89,8 @@ export class ContactFormComponent implements OnInit {
       email: '',
       telefone: '',
       empresa: '',
-      faturamento: '',
-      orcamento: ''
+      faturamento: ''
+      // orcamento: ''
     //  mensagem: ''
     };
   }

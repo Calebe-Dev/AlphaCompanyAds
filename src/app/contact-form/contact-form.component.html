@@ -64,14 +64,12 @@
                             <input type="text" [(ngModel)]="formData.empresa" name="empresa" id="empresa" placeholder="Nome da Empresa">
                         </div>
         
-                        <div class="form-group">
-                            <input type="text" [(ngModel)]="formData.orcamento" name="orcamento" id="orcamento" placeholder="Quanto você investe em marketing atualmente?" required>
-                        </div>
+
         
                         <div class="form-group">
                             <select [(ngModel)]="formData.faturamento" name="faturamento" id="faturamento" required>
                                 <option value="" disabled selected>Qual seu faturamento mensal?</option>
-                                <option value="menos-de-10k">Menos de R$10.000</option>
+                                <option value="menos-de-10k"> Até R$10.000</option>
                                 <option value="10k-50k">Entre R$10.000 e R$50.000</option>
                                 <option value="50k-100k">Entre R$50.000 e R$100.000</option>
                                 <option value="mais-de-100k">Mais de R$100.000</option>
@@ -79,6 +77,11 @@
                         </div>
                         
         <!--
+
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="formData.orcamento" name="orcamento" id="orcamento" placeholder="Quanto você investe em marketing atualmente?" required>
+                        </div>
+
                         <div class="form-group">
                             <textarea [(ngModel)]="formData.mensagem" name="mensagem" id="mensagem" placeholder="Como podemos ajudar sua empresa?" rows="4" required></textarea>
                         </div>
@@ -94,7 +97,7 @@
                                             <div class="dot"></div>
                                             <div class="dot"></div>
                                         </div>
-                                        <p>Enviando mensagem...</p>
+                                        <p>Enviando...</p>
                                     </div>
                                 }
         
@@ -116,7 +119,7 @@
         
                         <button type="submit" class="submit-button" id="button" [disabled]="statusEnvio.enviando">
                             @if (!statusEnvio.enviando) {
-                                <span>Enviar Mensagem</span>
+                                <span>Receber Mais Informações</span>
                                 <i class="bi bi-arrow-right"></i>
                             } @else {
                                 <span>Enviando...</span>

@@ -168,10 +168,22 @@ h2 {
 }
 
 .divider {
-    width: 60px;
+    width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #28a745, #1e7e34);
+    background: #ADD8E6;  /* Alterado para azul claro sólido */
     margin: 0 auto 2rem;
+}
+
+.benefit-item i {
+    color: #ADD8E6;  /* Alterado para azul claro */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover i {
+    transform: scale(1.1);
+    color: #8AC6E0;  /* Versão um pouco mais escura para hover */
 }
 
 .lead {
@@ -223,7 +235,7 @@ h2 {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    background-color: #28a745;
+    background-color: #0000FF;
     color: #ffffff;
     padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
     border: none;
@@ -235,7 +247,7 @@ h2 {
 }
 
 .submit-button:hover {
-    background-color: #218838;
+    background-color: #ADD8E6;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

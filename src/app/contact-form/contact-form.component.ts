@@ -18,8 +18,8 @@ export class ContactFormComponent implements OnInit {
     telefone: '',
     empresa: '',
     faturamento: '',
-    orcamento: '',
-    mensagem: ''
+    orcamento: ''
+   // mensagem: ''
   };
 
   statusEnvio = {
@@ -69,11 +69,14 @@ export class ContactFormComponent implements OnInit {
       !!this.formData.email &&
       this.validarEmail(this.formData.email) &&
       !!this.formData.telefone &&
-      !!this.formData.orcamento &&
-      !!this.formData.mensagem
+      !!this.formData.orcamento 
     );
-  }
+     // !!this.formData.mensagem
+    
+  
 
+  }
+  
   private validarEmail(email: string): boolean {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -86,8 +89,8 @@ export class ContactFormComponent implements OnInit {
       telefone: '',
       empresa: '',
       faturamento: '',
-      orcamento: '',
-      mensagem: ''
+      orcamento: ''
+    //  mensagem: ''
     };
   }
 }
